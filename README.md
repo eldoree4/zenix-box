@@ -1,14 +1,14 @@
 # Zenix Box
 
-Aplikasi mobile Android dan iOS untuk pengalaman studio foto/video AI, dibangun dengan Expo, React Native, dan TypeScript.
+Aplikasi Android dan iOS untuk pengalaman studio foto/video AI, dibangun dengan Expo, React Native, dan TypeScript.
 
-## Fitur yang tersedia
+## Struktur dan layar
 
-- Beranda berbahasa Indonesia dengan katalog tools AI dan filter kategori.
-- Pilih foto/video dari galeri menggunakan Expo Image Picker.
-- Layar studio dengan pratinjau media, kontrol intensitas visual, serta status demo.
-- Navigasi Beranda, Jelajahi, Proyek, dan Saya.
-- Katalog AI 4K, Retouch, Face Enhancer, Removal, Color Enhancer, Image Extender, AI Styles, AI Live, Video Collage, Stabilizer, Video Makeup, dan Video Editor.
+- **Beranda** — pengenalan studio, akses cepat, filter kategori, dan katalog tools.
+- **Jelajahi** — pencarian fitur dan filter Foto AI, Restorasi, atau Video.
+- **Proyek** — galeri pratinjau yang dibuat pada sesi aplikasi saat ini.
+- **Saya** — pengaturan notifikasi demo, privasi, bantuan, dan informasi Pro.
+- **Studio AI** — pilih foto/video, lihat pratinjau, ubah intensitas, dan buat pratinjau demo.
 
 ## Jalankan aplikasi
 
@@ -17,6 +17,6 @@ Aplikasi mobile Android dan iOS untuk pengalaman studio foto/video AI, dibangun 
 3. Jalankan `npx expo start`.
 4. Pindai QR dengan Expo Go, atau tekan `a` untuk Android dan `i` untuk iOS.
 
-## Catatan implementasi
+## Status fitur
 
-Studio saat ini adalah prototipe UI interaktif. Tombol pratinjau hanya memperagakan status proses; pemrosesan AI sungguhan, penyimpanan hasil, autentikasi, dan fitur berlangganan belum aktif. Integrasikan backend/model AI pilihan sebelum mengiklankan hasil sebagai pemrosesan nyata. Untuk build native, gunakan EAS Build atau Xcode/Android Studio setelah memasang dependensi.
+Katalog dan studio saat ini adalah prototipe antarmuka. Tombol pratinjau menambahkan item sementara ke tab Proyek; daftar tidak bertahan setelah aplikasi ditutup. Pemrosesan AI sungguhan, penyimpanan hasil, penyimpanan proyek persisten, akun, dan langganan belum aktif. Integrasikan backend/model AI pilihan sebelum mengiklankan hasil sebagai pemrosesan nyata.
