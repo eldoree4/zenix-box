@@ -2,15 +2,16 @@
   "name": "zenix-box",
   "version": "1.0.0",
   "private": true,
-  "main": "expo-router/entry",
+  "main": "expo/AppEntry",
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@expo/vector-icons": "^14.1.0",
+    "@expo/vector-icons": "^14.0.4",
     "expo": "~52.0.0",
     "expo-image-picker": "~16.0.6",
     "expo-linear-gradient": "~14.0.2",
@@ -19,6 +20,7 @@
     "react-native": "0.76.5"
   },
   "devDependencies": {
-    "@babel/core": "^7.25.2"
+    "@types/react": "~18.3.12",
+    "typescript": "~5.3.3"
   }
 }

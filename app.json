@@ -1,0 +1,34 @@
+{
+  "expo": {
+    "name": "Zenix Box",
+    "slug": "zenix-box",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "dark",
+    "splash": {
+      "backgroundColor": "#090B12"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSPhotoLibraryUsageDescription": "Zenix Box needs access to your photos so you can edit and enhance them."
+      }
+    },
+    "android": {
+      "permissions": ["READ_MEDIA_IMAGES", "READ_MEDIA_VIDEO"],
+      "adaptiveIcon": {
+        "backgroundColor": "#090B12"
+      }
+    },
+    "plugins": [
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Izinkan Zenix Box mengakses foto untuk mulai mengedit.",
+          "cameraPermission": "Izinkan Zenix Box menggunakan kamera untuk mengambil foto.",
+          "microphonePermission": false
+        }
+      ]
+    ]
+  }
+}
