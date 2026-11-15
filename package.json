@@ -9,6 +9,8 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "typecheck": "tsc --noEmit",
+    "server": "node server/index.js",
+    "server:dev": "nodemon server/index.js",
     "build:configure": "eas build:configure",
     "build:android": "eas build --platform android --profile production",
     "build:ios": "eas build --platform ios --profile production",
@@ -17,16 +19,20 @@
   },
   "dependencies": {
     "@expo/vector-icons": "^14.0.4",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
     "expo": "~52.0.0",
     "expo-image-picker": "~16.0.6",
     "expo-linear-gradient": "~14.0.2",
     "expo-status-bar": "~2.0.1",
+    "express": "^4.19.2",
     "react": "18.3.1",
     "react-native": "0.76.5"
   },
   "devDependencies": {
     "@types/react": "~18.3.12",
-    "typescript": "~5.3.3",
-    "eas-cli": "^12.0.0"
+    "eas-cli": "^12.0.0",
+    "nodemon": "^3.1.16",
+    "typescript": "~5.3.3"
   }
 }
