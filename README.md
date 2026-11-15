@@ -1,67 +1,529 @@
 # Zenix Box
 
-Aplikasi Android dan iOS berbasis Expo, React Native, dan TypeScript untuk pengalaman studio foto/video AI.
+Aplikasi Android dan iOS berbasis Expo, React Native, dan TypeScript yang berfokus pada pengalaman AI Photo Editor & AI Video Editor premium.
 
-## Yang sudah disiapkan
+## Fitur yang ada
 
-1. UI/UX production-ready
-   - Beranda premium dengan hero section, katalog AI, filter kategori, dan CTA utama.
-   - Navigasi multi-screen: Beranda, Jelajahi, Proyek, Saya.
-   - Modal studio untuk foto/video dengan kontrol intensitas dan pratinjau demo.
-   - State-aware project gallery dan profil settings.
+- Beranda premium dengan hero section dan CTA utama
+- Filter kategori: Semua, Foto AI, Restorasi, Video
+- Pencarian fitur AI
+- Tab navigasi: Beranda, Jelajahi, Proyek, Saya
+- Studio preview foto/video dengan kontrol intensitas
+- Proyek preview demo untuk pengguna uji coba
+- Profil + pengaturan notifikasi dan preferensi
 
-2. Backend AI API placeholder
-   - Ekspresi API dengan endpoint untuk info tool, status sistem, dan mock AI process.
-   - Variabel environment kosong yang bisa diisi nanti tanpa mempublikasikan credential.
+## Struktur
 
-3. Build flow Android + iOS
-   - File EAS config `eas.json` dan `app.config.js` siap untuk build lintas platform.
-   - Script build lokal dan checklist release store.
+- `App.tsx` — UI utama aplikasi mobile
+- `server/index.js` — API mock untuk AI processing
+- `app.config.js` — konfigurasi Expo build
+- `eas.json` — build profile EAS
+- `docs/` — checklist Play Store dan App Store
 
-4. Store metadata placeholder
-   - Folder `store-metadata` berisi template deskripsi Play Store dan App Store.
-   - Informasi yang biasanya perlu diisi sebelum publish dibawa ke file terpisah.
+## Jalankan lokal
 
-## Struktur repositori
-
-- `App.tsx` — aplikasi utama mobile
-- `app.config.js` — konfigurasi build Expo
-- `eas.json` — profil build EAS
-- `server/index.js` — API backend placeholder
-- `scripts/` — script build Android/iOS
-- `store-metadata/` — metadata publik untuk Play/App Store
-- `docs/STORE_RELEASE_CHECKLIST.md` — checklist release dan pengisian credential
-
-## Menjalankan aplikasi
-
-```sh
+```bash
 npm install
 npx expo start
 ```
 
-## Menjalankan backend API
+Gunakan Expo Go, Android Studio, atau Xcode untuk menjalankan build perangkat.
 
-```sh
-npm run server
-```
+## Build untuk store
 
-Akses default endpoint:
+1. Salin `.env.example` ke `.env`
+2. Isi value yang memang Anda miliki:
+   - `ANDROID_PACKAGE`
+   - `IOS_BUNDLE_IDENTIFIER`
+   - `EAS_PROJECT_ID`
+3. Jalankan:
 
-- http://localhost:4000/api/health
-- http://localhost:4000/api/tools
-- http://localhost:4000/api/ai/process
-
-## Build produksi
-
-```sh
-cp .env.example .env
+```bash
 npx eas-cli@latest build:configure
 npm run build:android
 npm run build:ios
 ```
 
-## Catatan penting
+## Catatan produksi
 
-- Semua credential, ID unik, signing key, App Store Connect key, Google Play service account, dan AI provider key dibiarkan kosong/placeholder.
-- Proses AI saat ini adalah mock API; belum terhubung ke model AI nyata.
-- Untuk publish resmi ke Google Play dan App Store, isi identifier, privacy policy, icon, screenshots, permission declaration, dan konfigurasi store sesuai ketentuan masing-masing store.
+- Credential, signing, dan service account tidak dimasukkan ke repo.
+- AI di aplikasi ini masih bersifat demo/mock hingga backend AI dan provider nyata dihubungkan.
+- Sebelum publish ke Google Play/App Store, lengkapi privacy policy, icon, screenshots, metadata store, content rating, dan privacy compliance.
+
+## Lisensi
+
+Proyek demo siap dikembangkan lebih lanjut sesuai kebutuhan produk/brand Anda.
+
+Edge note: if you want a final production build, replace the mock backend and add secure API + storage + billing before publishing.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
