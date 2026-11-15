@@ -4,3 +4,10 @@ dist/
 web-build/
 *.log
 .DS_Store
+.env
+.env.*
+!.env.example
+credentials.json
+*.p8
+*.mobileprovision
+*.p12

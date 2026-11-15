@@ -1,22 +1,37 @@
 # Zenix Box
 
-Aplikasi Android dan iOS untuk pengalaman studio foto/video AI, dibangun dengan Expo, React Native, dan TypeScript.
+Aplikasi Android dan iOS berbasis Expo, React Native, dan TypeScript.
 
-## Struktur dan layar
+## Layar dan fitur
 
-- **Beranda** — pengenalan studio, akses cepat, filter kategori, dan katalog tools.
+- **Beranda** — pengenalan studio, filter kategori, dan katalog tools.
 - **Jelajahi** — pencarian fitur dan filter Foto AI, Restorasi, atau Video.
-- **Proyek** — galeri pratinjau yang dibuat pada sesi aplikasi saat ini.
-- **Saya** — pengaturan notifikasi demo, privasi, bantuan, dan informasi Pro.
-- **Studio AI** — pilih foto/video, lihat pratinjau, ubah intensitas, dan buat pratinjau demo.
+- **Proyek** — galeri pratinjau sementara selama aplikasi terbuka.
+- **Saya** — preferensi dan informasi aplikasi.
+- **Studio AI** — pilih foto/video, lihat pratinjau, dan atur intensitas demo.
 
-## Jalankan aplikasi
+## Pengembangan lokal
 
-1. Pasang Node.js LTS dan Expo Go pada perangkat, atau siapkan Android Studio/Xcode.
-2. Jalankan `npm install`.
-3. Jalankan `npx expo start`.
-4. Pindai QR dengan Expo Go, atau tekan `a` untuk Android dan `i` untuk iOS.
+```sh
+npm install
+npx expo start
+```
 
-## Status fitur
+Gunakan Expo Go untuk uji cepat, atau Android Studio/Xcode untuk pengembangan native. Jalankan `npm run typecheck` untuk pemeriksaan TypeScript.
 
-Katalog dan studio saat ini adalah prototipe antarmuka. Tombol pratinjau menambahkan item sementara ke tab Proyek; daftar tidak bertahan setelah aplikasi ditutup. Pemrosesan AI sungguhan, penyimpanan hasil, penyimpanan proyek persisten, akun, dan langganan belum aktif. Integrasikan backend/model AI pilihan sebelum mengiklankan hasil sebagai pemrosesan nyata.
+## Generate build rilis
+
+Konfigurasi EAS tersedia di `eas.json`; panduan credential kosong, konfigurasi identifier, signing, serta persiapan store ada di [`docs/STORE_RELEASE_CHECKLIST.md`](docs/STORE_RELEASE_CHECKLIST.md).
+
+```sh
+cp .env.example .env
+npx eas-cli@latest build:configure
+npm run build:android
+npm run build:ios
+```
+
+Lengkapi `ANDROID_PACKAGE` dan `IOS_BUNDLE_IDENTIFIER` dengan identifier unik yang kamu miliki sebelum build rilis. Kredensial EAS/Google Play/App Store tidak disertakan dan harus dimasukkan secara privat saat diminta oleh tool resmi. Jangan menyimpan secret di source code.
+
+## Batasan produk saat ini
+
+Ini adalah prototipe UI multi-layar, bukan editor AI produksi. Galeri dapat memilih media dan studio menampilkan pratinjau demo, tetapi pemrosesan AI nyata, ekspor hasil, dan penyimpanan proyek persisten belum diimplementasikan. Jangan menerbitkan klaim pemrosesan AI sebelum backend nyata dan kebijakan privasinya tersedia. Lihat checklist store untuk langkah lanjutan dan catatan kompatibilitas Expo SDK.
